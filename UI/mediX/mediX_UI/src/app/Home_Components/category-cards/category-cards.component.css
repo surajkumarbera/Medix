@@ -1,0 +1,56 @@
+.material-symbols-outlined {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-20px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(20px);
+  }
+}
+.shake {
+  animation-name: shake;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+}
+.center {
+  display: flex;
+  justify-content: center;
+}
+.round-bordered {
+  border: 4px solid;
+  border-radius: 20px;
+  border-color: whitesmoke;
+}
+
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.image-gallery > div {
+  flex-basis: 250px; /* width: 350px; */
+}
+
+.image-gallery div img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  border-radius: 5px;
+}

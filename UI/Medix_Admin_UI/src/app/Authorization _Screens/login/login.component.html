@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row bg align-items-center justify-content-center">
+      <div class="col-md-5">
+        <mat-card>
+          <form [formGroup]="emp_loginForm"  (ngSubmit)="empLogin()">
+              <mat-card-title style="text-align:center;">
+                <h2>Employee Login</h2>
+                <br>
+              </mat-card-title>
+                <mat-card-content>  
+                  <div class="row justify-content-center">
+                    <div class="col-md-10">
+                      <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Employee Id</mat-label>
+                        <input matInput type="text" formControlName="emp_Id" placeholder="Enter Username or Employee Id">
+                      </mat-form-field>
+                      <mat-form-field appearance="fill" class="full-width">
+                        <mat-label>Password</mat-label>
+                        <input matInput type="password" minlength="4" formControlName="emp_Pwd" placeholder="Enter password">
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </mat-card-content>
+                <mat-card-actions class=" mr-3" style="text-align:center;">
+                  <button [disabled]="emp_loginForm.invalid" mat-raised-button type="submit" color="primary">Login</button>
+                 </mat-card-actions>
+        </form>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,78 @@
+<app-navbar></app-navbar>
+<div class="row align-items-start mt-5">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <div class="row mt-5">
+            <div class="col-md-4 align-self-center">
+                <mat-card class="card">
+                    <mat-card-title style="text-align:center;">
+                        <h2>Order Management</h2>
+                    </mat-card-title>
+                    <mat-card-content>
+                        <img mat-card-image src="../../../assets/images/order_management.jpg" width="300px"
+                            height="200px">
+                    </mat-card-content>
+                    <mat-card-actions style="align-items: center;">
+                        <button  routerLink="/vieworders" mat-button color="accent">
+                            View Orders
+                        </button>
+                        <button mat-button color="accent">
+                            Delete Orders
+                        </button>
+
+                    </mat-card-actions>
+                </mat-card>
+                <!-- <div>
+                    <h2><b>Order Management</b></h2>
+                </div> -->
+
+            </div>
+            <div class="col-md-4">
+                <a>
+                    <mat-card class="card">
+                        <mat-card-title style="text-align:center;">
+                            <h2>Product Management</h2>
+                        </mat-card-title>
+                        <mat-card-content>
+                            <img mat-card-image src="../../../assets/images/product_management.png" width="300px"
+                                height="200px">
+                        </mat-card-content>
+
+                        <mat-card-actions>
+
+                            <button routerLink="/viewProduct" mat-button color="accent">
+                                View Products
+                            </button>
+                            <button routerLink="/addProduct" mat-button color="accent">
+                                Add Products
+                            </button>
+                        </mat-card-actions>
+                    </mat-card>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a routerLink="/addProduct">
+                    <mat-card class="card">
+                        <mat-card-title style="text-align:center;">
+                            <h2>User Management</h2>
+                        </mat-card-title>
+                        <mat-card-content>
+                            <img mat-card-image src="../../../assets/images/user_mangament.png" width="300px"
+                                height="200px">
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button mat-button color="accent">
+                                View Users
+                            </button>
+                            <button mat-button color="accent">
+                                Add Users
+                            </button>
+                        </mat-card-actions>
+                    </mat-card>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-1"></div>
+</div>

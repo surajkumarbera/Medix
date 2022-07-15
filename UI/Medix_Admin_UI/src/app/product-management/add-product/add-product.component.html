@@ -1,0 +1,72 @@
+<div class="row mt-1 justify-content-center" >
+    <div class="col-md-8">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title><h1><b>Add-Product</b></h1></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <form enctype="multipart/form-data" #f="ngForm" [formGroup]="addedProduct" (ngSubmit)="AddProduct(f.value)" novalidate>
+          <div class="row">
+            <div class="col-md-6 align-self-center">
+              <mat-card>
+                <mat-card-content>
+                  <img mat-card-image [src]="card_Image">
+                  <mat-form-field  class="full-width" appearance="fill">
+                    <mat-label>Vendor</mat-label>
+                    <input  matInput name="Vendor" formControlName="Vendor" required>
+                </mat-form-field>
+                </mat-card-content>
+                <mat-card-actions><input type="file" name="ImageUrl" (change)="getFile($event)" formControlName="ImageUrl" style="width: 90%; align-items: center; justify-content: center;"></mat-card-actions>
+              </mat-card>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field  class="full-width" appearance="fill">
+                <mat-label>Product Name</mat-label>
+                <input  matInput name="Name" formControlName="Name" required>
+            </mat-form-field>
+            <mat-form-field  class="full-width" appearance="fill">
+              <mat-label>Description</mat-label>
+              <input  matInput form="Descriptions" formControlName="Descriptions" required>
+          </mat-form-field>
+            <mat-form-field class="full-width" appearance="fill">
+              <mat-label>Cost-Price</mat-label>
+              <input matInput type="number" name="Price" minlength="2" formControlName="Price"  required>
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="fill">
+              <mat-label>Quantity</mat-label>
+              <input matInput type="number" name="Quantity" minlength="1" formControlName="Quantity" required>
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="fill">
+              <mat-label>Category</mat-label>
+              <mat-select name="CategoriesId" formControlName="CategoriesId" required>
+                <mat-option *ngFor="let cat of categories" [value]="cat.Id">
+                  {{cat.Name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="fill">
+              <mat-label>Sub-Category</mat-label>
+              <mat-select name="SubCategoriesId" formControlName="SubCategoriesId" required>
+                <mat-option *ngFor="let subCat of subcategories" [value]="subCat.Id" >
+                    <!-- // [value]="subCat.subcat_Id"> [value]="cat.cat_Id" -->
+                  {{subCat.Name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            </div>
+          </div>
+
+        <button mat-raised-button color="primary" type="submit" >submit</button>
+        </form>
+        </mat-card-content>
+        <mat-card-footer>
+          <mat-card-actions>
+
+          </mat-card-actions>
+        </mat-card-footer>
+      </mat-card>
+
+
+
+    </div>
+    </div>

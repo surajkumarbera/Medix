@@ -1,0 +1,142 @@
+<h3 class="mb-4" style="text-align: center; margin-top: 5%">
+  Customer Sign Up
+</h3>
+
+<div class="row">
+  <form
+    class="col-sm-4"
+    [formGroup]="signUpForm"
+    (ngSubmit)="signUp()"
+    style="margin-left: auto; margin-right: auto; margin-top: 1%"
+  >
+    <div class="mb-3">
+      <label for="userName" class="form-label"
+        ><span class="material-symbols-outlined">mood</span>Full Name</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="userName"
+        name="userName"
+        formControlName="userName"
+      />
+      <span
+        *ngIf="userName && userName.touched && userName.invalid"
+        style="color: red"
+        >Name is mandatory!</span
+      >
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label"
+        ><span class="material-symbols-outlined">mail</span>Email Id</label
+      >
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        required
+        email
+        formControlName="email"
+      />
+      <span *ngIf="email && email.touched && email.invalid" style="color: red"
+        >Email Id is mandatory!</span
+      >
+    </div>
+
+    <div class="mb-3">
+      <label for="mobileNo" class="form-label"
+        ><span class="material-symbols-outlined">call</span>Phone No.</label
+      >
+      <input
+        type="tel"
+        class="form-control"
+        id="mobileNo"
+        name="mobileNo"
+        required
+        formControlName="mobileNo"
+      />
+      <span
+        *ngIf="mobileNo && mobileNo.touched && mobileNo.invalid"
+        style="color: red"
+        >Phone No. is mandatory!</span
+      >
+    </div>
+    <div class="mb-3">
+      <label for="pincode" class="form-label"
+        ><span class="material-symbols-outlined">pin_drop</span>Pin code</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="pincode"
+        name="pincode"
+        required
+        formControlName="pincode"
+      />
+      <span
+        *ngIf="pincode && pincode.touched && pincode.invalid"
+        style="color: red"
+        >Pin code is mandatory!</span
+      >
+    </div>
+    
+
+    <div class="mb-3">
+      <label for="address" class="form-label"
+        ><span class="material-symbols-outlined">navigation</span>Full
+        Address</label
+      >
+      <input
+        type="tel"
+        class="form-control"
+        id="address"
+        name="address"
+        required
+        formControlName="address"
+      />
+      <span
+        *ngIf="address && address.touched && address.invalid"
+        style="color: red"
+        >Address is mandatory!</span
+      >
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label"
+        ><span class="material-symbols-outlined">password</span>Password</label
+      >
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        name="password"
+        required
+        formControlName="password"
+      />
+      <span style="color:blue">Password must contain, Uppercase & Lowercase letter,
+        <br>Number, Special Character (Ex- @, #, $, *, &).<br>
+      Minimum Length of Password is 8.</span>
+      <span
+        *ngIf="password && password.touched && password.invalid"
+        style="color: red"
+        ><br>Password is mandatory!</span
+      >
+    </div>
+
+    <div class="text-center">
+      <button
+        [disabled]="signUpForm.invalid"
+        type="submit"
+        class="btn btn-warning btn-lg"
+      >
+      <span
+      *ngIf="showSpinner===false"><span class="material-symbols-outlined">contactless</span>Signup</span>
+    <span *ngIf="showSpinner">
+      <div class="spinner-border spinner-border-sm" role="status"></div>&nbsp; Please Wait
+    </span>
+      </button>
+    </div>
+  </form>
+</div>

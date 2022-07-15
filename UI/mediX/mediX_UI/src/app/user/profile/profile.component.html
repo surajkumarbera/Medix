@@ -1,0 +1,29 @@
+<div style="text-align:center;">
+<h3>Welcome, User!</h3>
+<h5>Here you can perform quick actions for your account.</h5>
+</div>
+<div class="container-fluid d-flex" style="justify-content:center;">
+    <div class="list-group" style="width:50%; margin-top: 20px;">
+        <button type="button" class="list-group-item list-group-item-action" style="height: 5.5em;">
+            <span class="material-symbols-outlined">
+            inventory_2
+            </span><b>My orders</b><br><em><small>&nbsp; &nbsp; &nbsp; &nbsp; Track and Manage all your orders</small></em></button>
+        <button type="button" class="list-group-item list-group-item-action" style="height: 5.5em;">
+            <span class="material-symbols-outlined">
+                Update
+                </span><b>Update my details</b><br><em><small>&nbsp; &nbsp; &nbsp; &nbsp; Update your Address / Contact Details</small></em></button>
+        <button type="button" class="list-group-item list-group-item-action" style="height: 5.5em;">
+            <span class="material-symbols-outlined">
+                person_remove
+                </span><b>Delete my account</b><br><em><small>&nbsp; &nbsp; &nbsp; &nbsp; Permanently Delete all your data from our server (Not Recommended)</small></em></button>
+
+                <a class="button list-group-item list-group-item-action" href="mailto:support@medix.com" style="height: 4.5em;">
+                <span class="material-symbols-outlined">
+                    support</span><b>Need Help? Contact Us</b><br><em><small>&nbsp; &nbsp; &nbsp; &nbsp; We usually reply within 1 hour</small></em></a>
+
+                    <button (click)="logout()"  type="button" class="list-group-item list-group-item-action" style="height: 5.5em;">
+            <span class="material-symbols-outlined">
+                logout
+                </span><b>Logout</b><br><em><small>&nbsp; &nbsp; &nbsp; &nbsp; Logout from this device</small></em></button>
+      </div>
+</div>

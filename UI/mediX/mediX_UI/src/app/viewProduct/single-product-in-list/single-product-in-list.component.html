@@ -1,0 +1,27 @@
+<div class="container list-group-item list-group-item-action pointer" 
+style="width:80%; height:100px; border:2px ridge; border-radius: 20px; margin-bottom: 15px;"
+>
+<div class="row">
+    <div class="col-md-2 d-flex" (click)="navigate()" style="justify-content: center;">
+        <img src={{product.ImageUrl}} height="80px">
+    </div>
+    <div class="col-md-4" style="font-size:large;" (click)="navigate()">
+        <b>{{product.Name}}</b><br>
+        <em><small>{{product.Vendor}}</small></em><br>
+        <small>{{product.Category}}</small>
+    </div>
+    <div class="col-md-3" style="font-size:25px; margin-top: 20px;" (click)="navigate()">
+        <b><em>Rs. {{product.Price}}</em></b>
+    </div>
+    <div class="col-md-3"><br>
+        <button *ngIf="isAuthorized" type="button" class="btn btn-success" (click) = 'addToCart(product.Id)'><span
+            *ngIf="showSpinner===false"><span class="material-symbols-outlined">double_arrow</span>Add to Cart</span>
+          <span *ngIf="showSpinner">
+            <div class="spinner-border spinner-border-sm" role="status"></div>&nbsp; Please Wait
+          </span></button>
+            <button *ngIf="!isAuthorized" type="button" class="btn btn-success" routerLink="/notloggedin"><span class="material-symbols-outlined">
+                double_arrow
+                </span>Add to Cart</button>
+    </div>
+</div>
+</div>

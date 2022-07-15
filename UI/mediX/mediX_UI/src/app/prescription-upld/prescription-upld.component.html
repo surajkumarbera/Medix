@@ -1,0 +1,37 @@
+<h3 class="mb-4" style="text-align: center; margin-top: 5%">
+    Upload Your Prescription to Continue
+  </h3>
+
+<form class="col-sm-4" style="margin-left: auto; margin-right: auto;" #form="ngForm"  (ngSubmit)="onSubmit(form)">
+  <div class="mb-3">
+    <label for="formFile" class="form-label"><span class="material-symbols-outlined">
+      file_upload
+      </span>Select Prescription Image</label>
+    <input class="form-control" type="file" id="formFile" name="formFile" required ngModel #file = "ngModel" (change) = 'getFile($event)'>
+    <span *ngIf = "file.touched && file.invalid" style="color:red;">Prescription is Mandatory!</span>
+  </div>
+  <div class="mb-3">
+    <label for="name" class="form-label"><span class="material-symbols-outlined">
+      account_circle
+      </span>Enter Patient Name</label>
+    <input class="form-control" type="text" id="name" name="name" required ngModel #name = "ngModel">
+    <span *ngIf = "name.touched && name.invalid" style="color:red;">Patient Name is Mandatory!</span>
+  </div>
+  <div class="mb-3">
+    <label for="phone" class="form-label"><span class="material-symbols-outlined">
+      call
+      </span>Enter Patient Contact Number</label>
+    <input class="form-control" type="text" id="phone" name="phone" required maxlength="10" minlength="10" ngModel #phone = "ngModel">
+    <span *ngIf = "phone.touched && phone.invalid" style="color:red;">Invalid Phone Number!</span>
+  </div>
+  <div class="mb-3" style="text-align: center;">
+    <button [disabled]="form.invalid" type="submit" class="btn btn-success btn-lg" >
+      <span *ngIf="!showSpinner"><span class="material-symbols-outlined">
+      task_alt
+      </span>Confirm</span>
+      <span *ngIf="showSpinner">
+        <div class="spinner-border spinner-border-sm" role="status"></div>&nbsp; Please Wait
+      </span></button>
+  </div>
+
+</form>

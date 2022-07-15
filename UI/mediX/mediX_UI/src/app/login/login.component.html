@@ -1,0 +1,48 @@
+<div class="row">
+  <form [formGroup]="loginForm" class="col-sm-4" (ngSubmit)="login()"
+    style="margin-left: auto; margin-right: auto; margin-top: 5%">
+    <div class="text-center">
+      <h3 class="mb-3">Customer Login</h3>
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label"><span
+          class="material-symbols-outlined">alternate_email</span>Email
+        Id</label>
+      <input type="email" formControlName="email" name="email" class="form-control" id="exampleInputEmail1" />
+      <div *ngIf="(email && email.untouched) || (email && email.valid)" class="form-text">
+        We'll never share your email with anyone else.
+      </div>
+      <span *ngIf="email && email.touched && email && email.invalid" style="color: red">Invalid Email</span>
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label"><span
+          class="material-symbols-outlined">key</span>Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="password" minlength="4"
+        formControlName="password" />
+      <div *ngIf="(password && password.untouched) || (password && password.valid)" class="form-text">
+        Your password is Case Sensitive.
+      </div>
+      <span *ngIf="password && password.touched && password && password.invalid" style="color: red">Invalid
+        password</span>
+    </div>
+    <div class="text-center">
+      <button [disabled]="loginForm.invalid" type="submit" class="btn btn-success btn-lg"><span
+          *ngIf="showSpinner===false"><span class="material-symbols-outlined">login</span>Login</span>
+        <span *ngIf="showSpinner">
+          <div class="spinner-border spinner-border-sm" role="status"></div>&nbsp; Please Wait
+        </span>
+      </button>
+
+      <br /><br>New Here? Let's
+      <a style="color: blue; font-weight: bold" routerLink="/signup">Sign Up!</a>
+
+      <br /><!--<br><a routerLink="/employeeLogin"><button type="button" class="btn btn-warning btn-lg">
+          <span class="material-symbols-outlined">sensor_occupied</span>Employee
+          Login
+        </button></a>-->
+
+    </div>
+  </form>
+</div>
